@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Board</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Weather Board</h1>
+      <p class="sub">Open-Meteo API. No key, no backend, no build step. <button id="unit-toggle" class="chip" title="Toggle °C / °F"></button></p>
+    </header>
+
+    <div class="search-box">
+      <input id="city-input" placeholder="Search a city — hit Enter" autocomplete="off" />
+      <ul id="suggestions"></ul>
+    </div>
+
+    <div id="recents" class="recents"></div>
+
+    <div id="status"></div>
+
+    <main id="board" class="hidden">
+      <section class="card current" id="current-card">
+        <div>
+          <h2 id="place-name"></h2>
+          <p id="place-country" class="sub"></p>
+          <div id="current-big"></div>
+          <p id="current-desc" class="desc"></p>
+        </div>
+        <div class="current-meta">
+          <div><span class="m-label">Feels like</span><span id="m-feels"></span></div>
+          <div><span class="m-label">Humidity</span><span id="m-humidity"></span></div>
+          <div><span class="m-label">Wind</span><span id="m-wind"></span></div>
+          <div><span class="m-label">Rain chance</span><span id="m-rain"></span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>7-day forecast</h2>
+        <div id="forecast" class="forecast"></div>
+      </section>
+    </main>
+
+    <div id="hint" class="card hint-card">
+      <h2>Try it</h2>
+      <p>Bengaluru · Mumbai · Kathmandu · London · Tokyo · Cape Town — any city works.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
